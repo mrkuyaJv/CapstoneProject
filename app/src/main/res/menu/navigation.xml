@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_24dp"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_translator"
+        android:icon="@drawable/ic_translate_24dp"
+        android:title="@string/title_translator" />
+    <item
+        android:id="@+id/navigation_touristspots"
+        android:icon="@drawable/ic_flight_takeoff_24dp"
+        android:title="@string/title_touristspots" />
+    <item
+        android:id="@+id/navigation_dictionary"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:title="@string/title_dictionary" />
+    <item
+        android:id="@+id/navigation_aboutus"
+        android:icon="@drawable/ic_person_24dp"
+        android:title="@string/title_about"/>
+
+</menu>
