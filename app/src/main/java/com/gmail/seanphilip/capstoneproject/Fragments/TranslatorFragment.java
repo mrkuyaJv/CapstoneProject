@@ -1,22 +1,34 @@
 package com.gmail.seanphilip.capstoneproject.Fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.gmail.seanphilip.capstoneproject.R;
 
+
 public class TranslatorFragment extends Fragment {
-    @Nullable
+
+    public TextView txtSpeechInput;
+    public ImageButton speakBtn;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
+
+
+    public TranslatorFragment(){
+        //Empty Constructor
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //just change the fragment_dashboard
-        //with the fragment you want to inflate
-        //like if the class is TranslatorFragment it should have R.layout.home_fragment
-        //if it is DashboardFragment it should have R.layout.fragment_dashboard
-        return inflater.inflate(R.layout.translator_fragment, null);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.translator_fragment, container, false);
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 }
