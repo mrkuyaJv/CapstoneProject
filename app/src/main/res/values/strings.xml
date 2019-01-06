@@ -18,4 +18,9 @@
     <string name="location_description">Location Description</string>
     <string name="button_locate">Locate</string>
     <string name="speech_input">Input speech here</string>
+    <string name="todo">TODO</string>
+    <string name="outputSpeech">Output speech here</string>
+    <string name="input">Input</string>
+    <string name="output">Output</string>
+    <string name="speak">Speak</string>
 </resources>
