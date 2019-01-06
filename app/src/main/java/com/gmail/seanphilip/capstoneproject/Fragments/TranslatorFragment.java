@@ -10,18 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.gmail.seanphilip.capstoneproject.MainActivity;
 import com.gmail.seanphilip.capstoneproject.R;
-
 import java.util.Locale;
 
-
 public class TranslatorFragment extends Fragment implements TextToSpeech.OnInitListener{
-
     private Button speakButton;
     private TextToSpeech tts;
     private EditText speechText;
