@@ -76,6 +76,7 @@
             android:layout_toRightOf="@+id/inputTextView"
             android:inputType="textMultiLine"
             android:text="@string/speech_input"
+            android:textAlignment="center"
             android:textSize="16sp" />
 
         <Button
