@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 
 import com.gmail.seanphilip.capstoneproject.R;
 
-public class AboutFragment extends Fragment {
+public class placesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        return inflater.inflate(R.layout.about_fragment, null);
+        return inflater.inflate(R.layout.places_fragment, null);
     }
 }

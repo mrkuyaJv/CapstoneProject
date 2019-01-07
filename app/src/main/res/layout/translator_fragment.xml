@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="2">
+    android:weightSum="3">
 
     <!--<TextView-->
     <!--android:layout_width="wrap_content"-->
@@ -17,12 +17,12 @@
     <LinearLayout
         android:weightSum="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tap_on_mic"
@@ -38,54 +38,94 @@
             android:background="@null"
             android:onClick="getSpeechInput"
             android:src="@drawable/ic_mic"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:layout_margin="25dp"
-            android:contentDescription="@string/todo" />
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"/>
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="190sp"
-        android:weightSum="1">
+        android:layout_height="40sp"
+        android:weightSum="3">
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/inputTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="58dp"
-            android:layout_marginLeft="58dp"
-            android:layout_marginTop="58dp"
-            android:text="@string/input" />
+            android:text="@string/input"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textAlignment="center"/>
 
         <EditText
+            android:layout_weight="1"
             android:id="@+id/speechText"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/inputTextView"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginEnd="79dp"
-            android:layout_marginRight="79dp"
-            android:layout_toEndOf="@+id/inputTextView"
-            android:layout_toRightOf="@+id/inputTextView"
-            android:inputType="textMultiLine"
+            android:inputType="text"
             android:text="@string/speech_input"
             android:textAlignment="center"
             android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/speakButton"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:text="@string/speak"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/convertTextButton"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:text="@string/convertText"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="23dp">
+
+        <TextView
+            android:text="@string/optionLanguages"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/selectLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/languages"
+            android:prompt="@string/chooseLanguage"
+            android:layout_alignParentRight="true"
+            style="@style/Base.TextAppearance.AppCompat.Widget.Button"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140sp">
+
+        <TextView
+            android:id="@+id/translatedText"
+            android:text="@string/translationHere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="50dp"
-            android:text="@string/speak" />
+            android:layout_centerInParent="true" />
     </RelativeLayout>
 </LinearLayout>

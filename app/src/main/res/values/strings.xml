@@ -23,4 +23,21 @@
     <string name="input">Input</string>
     <string name="output">Output</string>
     <string name="speak">Speak</string>
+
+    <string name="chooseLanguage">Choose a Language</string>
+    <string name="selectLanguage">Select Language</string>
+    <string name="translate">Translate</string>
+    <string name="resultGoesHereText">Translated Words goes here</string>
+    <string name="english">English</string>
+    <string name="filipino">Filipino</string>
+    <string name="cebuano">Cebuano</string>
+    <string name="optionLanguages">See the words in these languages below</string>
+    <string name="translationHere">Translation Here</string>
+    <string name="convertText">Translate Text</string>
+    <string name="convertSpeech">Translate Speech</string>
+    <string-array name="languages">
+        <item id="eng">English</item>
+        <item id="ceb">Cebuano</item>
+        <item id="fil">Filipino</item>
+    </string-array>
 </resources>

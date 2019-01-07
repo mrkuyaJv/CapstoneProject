@@ -5,27 +5,48 @@ import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.gmail.seanphilip.capstoneproject.R;
+
 import java.util.Locale;
 
-public class TranslatorFragment extends Fragment implements TextToSpeech.OnInitListener{
+public class translatorFragment extends Fragment implements TextToSpeech.OnInitListener {
     private Button speakButton;
+    private Button convertTextButton;
     private TextToSpeech tts;
     private EditText speechText;
 
-    public TranslatorFragment(){
+    public translatorFragment(){
         //Empty Constructor
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.translator_fragment, container, false);
+        // return inflater.inflate(R.layout.translator_fragment, container, false);
+
+        View rootView = inflater.inflate(R.layout.translator_fragment, container, false);
+
+        convertTextButton = rootView.findViewById(R.id.convertTextButton);
+
+        return rootView;
+    }
+
+    public void onClick(View view){
+        Fragment fragment;
+        switch (view.getId()){
+            case R.id.convertTextButton:
+                fragment = new textTranslatorFragment();
+                replaceFragment(fragment);
+                break;
+        }
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -45,6 +66,13 @@ public class TranslatorFragment extends Fragment implements TextToSpeech.OnInitL
                 speakOut();
             }
         });
+    }
+
+    public void replaceFragment(Fragment fragment){
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private void speakOut(){

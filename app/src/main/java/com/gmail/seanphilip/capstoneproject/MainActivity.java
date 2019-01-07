@@ -1,29 +1,26 @@
 package com.gmail.seanphilip.capstoneproject;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gmail.seanphilip.capstoneproject.Fragments.AboutFragment;
-import com.gmail.seanphilip.capstoneproject.Fragments.DictionaryFragment;
-import com.gmail.seanphilip.capstoneproject.Fragments.HomeFragment;
-import com.gmail.seanphilip.capstoneproject.Fragments.PlacesFragment;
-import com.gmail.seanphilip.capstoneproject.Fragments.TranslatorFragment;
+import com.gmail.seanphilip.capstoneproject.Fragments.aboutFragment;
+import com.gmail.seanphilip.capstoneproject.Fragments.dictionaryFragment;
+import com.gmail.seanphilip.capstoneproject.Fragments.homeFragment;
+import com.gmail.seanphilip.capstoneproject.Fragments.placesFragment;
+import com.gmail.seanphilip.capstoneproject.Fragments.translatorFragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -42,23 +39,23 @@ public class MainActivity extends AppCompatActivity{
             toolbar = getSupportActionBar();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    fragment = new HomeFragment();
+                    fragment = new homeFragment();
                     toolbar.setTitle("Tourist Assistance App");
                     break;
                 case R.id.navigation_translator:
-                    fragment = new TranslatorFragment();
+                    fragment = new translatorFragment();
                     toolbar.setTitle("Translator");
                     break;
                 case R.id.navigation_touristspots:
-                    fragment = new PlacesFragment();
+                    fragment = new placesFragment();
                     toolbar.setTitle("Places");
                     break;
                 case R.id.navigation_dictionary:
-                    fragment = new DictionaryFragment();
+                    fragment = new dictionaryFragment();
                     toolbar.setTitle("Dictionary");
                     break;
                 case R.id.navigation_aboutus:
-                    fragment = new AboutFragment();
+                    fragment = new aboutFragment();
                     toolbar.setTitle("About Us");
                     break;
             }
@@ -71,7 +68,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadFragment(new HomeFragment());
+        loadFragment(new homeFragment());
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
